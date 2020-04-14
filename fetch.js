@@ -5,12 +5,9 @@ fetch('https://api.github.com/users/MariaKasa')
 .then(res=>res.json())
 // .then(json=> console.log(json))
 .then(json => {
-	let name = json.name;
-console.log(name)
+let name = json.name;
 let login = json.login;
-console.log(login);
 let id = json.id;
-console.log(id)
 let body = document.body;
 let imya = document.createElement('p');
 imya.innerHTML = name;
