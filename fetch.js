@@ -4,7 +4,7 @@
 fetch('https://api.github.com/users/${login}')
 .then(res=>res.json())
 // .then(json=> console.log(json))
-.then(json => {
+.then(json => let username = {
 let name = json.name;
 let login = json.login;
 let id = json.id;
