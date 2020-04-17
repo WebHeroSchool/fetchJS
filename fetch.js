@@ -1,10 +1,10 @@
 
 
 
-fetch('https://api.github.com/users/${login}')
+fetch('https://api.github.com/users/?username=${login}' ,{method: 'GET'} )
 .then(res=>res.json())
 // .then(json=> console.log(json))
-.then(json => let username = {
+.then(json => {
 let name = json.name;
 let login = json.login;
 let id = json.id;
