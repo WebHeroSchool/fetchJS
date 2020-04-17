@@ -1,7 +1,7 @@
 
 
 
-fetch('https://api.github.com/users/?username=${name}' )
+fetch('https://api.github.com/users/?username=${getUsernameFromUrl(url)' )
 .then(res=>res.json())
 // .then(json=> console.log(json))
 .then(json => {
