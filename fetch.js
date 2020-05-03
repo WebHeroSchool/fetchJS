@@ -1,9 +1,23 @@
 
 
 
-fetch(https://api.github.com/users/?username=${login}' )
-.then(res=>res.json())
-// .then(json=> console.log(json))
+let body = document.body;
+let url = window.location.toString();
+
+let getName = (url) => {
+ let urlSeparation = url.split('=');
+ console.log(urlSeparation);
+ let userName = urlSeparation[1];
+ if (userName == undefined){
+  userName = 'MariaKasa';
+ }
+ return userName;
+}
+let name = getName(url);
+nameFromUrl()
+
+fetch(`https://api.github.com/users/${getName(url)}`)
+.then(res => res.json()) 
 .then(json => {
 let name = json.name;
 let login = json.login;
@@ -22,4 +36,3 @@ document.body.appendChild(nomer)
 
 
 .catch(err =>console.log(err))
-
