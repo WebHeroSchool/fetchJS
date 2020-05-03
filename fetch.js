@@ -1,6 +1,3 @@
-
-
-
 let body = document.body;
 let url = window.location.toString();
 
@@ -14,7 +11,7 @@ let getName = (url) => {
  return userName;
 }
 let name = getName(url);
-getName()
+getName(url);
 
 fetch(`https://api.github.com/users/${getName(url)}`)
 .then(res => res.json()) 
@@ -22,16 +19,22 @@ fetch(`https://api.github.com/users/${getName(url)}`)
 let name = json.name;
 let login = json.login;
 let id = json.id;
+let photo = json.avatar_url;
 let body = document.body;
-let imya = document.createElement('p');
-imya.innerHTML = name;
-document.body.appendChild(imya)
+let userName = document.createElement('p');
+userName.innerHTML = name;
+document.body.appendChild(userName)
 let logo = document.createElement('p');
 logo.innerHTML = login;
 document.body.appendChild(logo)
-let nomer = document.createElement('p');
-nomer.innerHTML = id;
-document.body.appendChild(nomer)
+let userId = document.createElement('p');
+userId.innerHTML = id;
+document.body.appendChild(userId)
+  let elementForPhoto = document.createElement('img');
+  let newString = document.createElement('br');
+   elementForPhoto.src = photo;
+  body.appendChild(newString);
+  body.appendChild(elementForPhoto);
 })
 
 
