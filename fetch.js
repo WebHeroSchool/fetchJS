@@ -14,7 +14,7 @@ let getName = (url) => {
  return userName;
 }
 let name = getName(url);
-nameFromUrl()
+getName()
 
 fetch(`https://api.github.com/users/${getName(url)}`)
 .then(res => res.json()) 
