@@ -1,3 +1,4 @@
+
 let body = document.body;
 let url = window.location.toString();
 
@@ -10,8 +11,16 @@ let getName = (url) => {
  }
  return userName;
 }
+
 let name = getName(url);
 getName(url);
+
+function notFound(name) {
+    if(name == undefined) {
+        document.write('User is not found');
+    }
+}
+
 
 fetch(`https://api.github.com/users/${getName(url)}`)
 .then(res => res.json()) 
@@ -35,7 +44,9 @@ document.body.appendChild(userId)
    elementForPhoto.src = photo;
   body.appendChild(newString);
   body.appendChild(elementForPhoto);
+  notFound(name)
 })
 
 
-.catch(err =>console.log(err))
+.catch(err =>console.log(err));
+
