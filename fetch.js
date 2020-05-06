@@ -1,4 +1,14 @@
+ let url = window.location.toString();
 
+    let getName = (url) => {
+        let urlSeparation = url.split('=');
+        console.log(urlSeparation);
+        let userName = urlSeparation[1];
+        if (userName == undefined){
+        userName = 'MariaKasa';
+    }
+        return userName;
+    }
 
     let url = window.location.toString();
      const date = new Date();
