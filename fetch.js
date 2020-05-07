@@ -1,16 +1,7 @@
- let url = window.location.toString();
 
-    let getName = (url) => {
-        let urlSeparation = url.split('=');
-        console.log(urlSeparation);
-        let userName = urlSeparation[1];
-        if (userName == undefined){
-        userName = 'MariaKasa';
-    }
-        return userName;
-    }
 
-    let url = window.location.toString();
+ 
+let url = window.location.toString();
      const date = new Date();
 
      function withoutLoader  () {
@@ -60,29 +51,36 @@
     let login = json.login;
     let id = json.id;
     let photo = json.avatar_url;
+     
     const body = document.body;
+     
     let userName = document.createElement('p');
     userName.innerHTML = name;
     document.body.appendChild(userName)
+     
     let logo = document.createElement('p');
     logo.innerHTML = login;
     document.body.appendChild(logo)
+     
     let userId = document.createElement('p');
     userId.innerHTML = id;
     document.body.appendChild(userId)
+     
     let elementForPhoto = document.createElement('img');
     let newString = document.createElement('br');
     elementForPhoto.src = photo;
     body.appendChild(newString);
     body.appendChild(elementForPhoto);
+     
     notFound(name)
+     
     const date = document.createElement('p');
+     
     date.innerHTML = `${dateFromPromise}`;
     body.appendChild(date);
+     
     withoutLoader(preload);
   })
    
 
     .catch(err =>notFound);
-
- 
